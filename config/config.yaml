@@ -1,13 +1,13 @@
 # ═══════════════════════════════════════════════════════════════════
 # Squad: Slides Squad
 # Domain: Apresentações e painéis animados para eventos
-# Version: 1.0.0
+# Version: 1.1.0
 # ═══════════════════════════════════════════════════════════════════
 
 squad:
   name: slides-squad
   display_name: "Slides Squad — Palco & Telão"
-  version: "1.0.0"
+  version: "1.1.0"
   domain: "Apresentações animadas para palco, telão LED, TV e projetor"
   description: |
     Transforma o que o cliente manda (texto do pedido, artes do evento, logos, landing page)

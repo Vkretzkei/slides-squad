@@ -11,7 +11,7 @@ description: >-
 license: MIT
 metadata:
   squad: "Slides Squad"
-  version: "1.0.0"
+  version: "1.1.0"
   agents: "9"
   author: "Vkretzkei"
 ---
@@ -105,6 +105,11 @@ Rode antes de entregar. Não declare a entrega pronta com item CRÍTICO aberto.
 - `examples/inside-2026/` — caso real de referência (2 decks)
 
 Scripts precisam de Python 3.9+ e Pillow (`pip install pillow`).
+
+## Instalação e atalhos
+
+- `INSTALAR.md` — passo a passo para o Claude instalar/atualizar o squad no nível do usuário
+- `commands/` — atalhos `/slides-<agente>` para chamar cada agente direto (copiados para `~/.claude/commands/`)
 
 ## Convenções
 

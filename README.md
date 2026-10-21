@@ -64,17 +64,41 @@ Abra `templates/patterns/gallery.html` para ver todos os padrões funcionando.
 
 ## Instalação
 
-Copie a pasta para o diretório de skills:
+### Jeito fácil: cole este prompt no Claude Code
+
+```
+Instale o Slides Squad no meu computador para eu usar em qualquer chat ou projeto
+do Claude Code, não só numa pasta específica. Siga as instruções do arquivo
+INSTALAR.md deste repositório: https://github.com/Vkretzkei/slides-squad
+Quando eu digitar / quero ver o squad e os agentes para escolher.
+```
+
+O Claude baixa o squad para `~/.claude/skills/slides-squad`, instala os atalhos dos agentes em `~/.claude/commands/` e confere tudo. Depois é só abrir uma conversa nova e digitar `/slides`:
+
+| Comando | O que faz |
+|---|---|
+| `/slides-squad` | Projeto completo, do briefing à entrega (recomendado) |
+| `/slides-stage-director` | Chefe do squad |
+| `/slides-nancy-duarte` | Narrativa e roteiro |
+| `/slides-garr-reynolds` | Simplificar e cortar |
+| `/slides-brand-decoder` | Identidade visual a partir das artes |
+| `/slides-art-director` | Composição dos slides |
+| `/slides-motion-designer` | Animações e builds |
+| `/slides-led-engineer` | Telão e operação ao vivo |
+| `/slides-deck-builder` | Construir/alterar os decks |
+| `/slides-stage-qa` | Revisão visual e ensaio |
+
+Para atualizar depois: peça "atualize o slides-squad".
+
+### Jeito manual
 
 ```bash
 git clone https://github.com/Vkretzkei/slides-squad ~/.claude/skills/slides-squad
+cp ~/.claude/skills/slides-squad/commands/*.md ~/.claude/commands/
+pip install pillow   # opcional: scripts de logo, fonte e revisão
 ```
 
-Scripts auxiliares precisam de Python 3.9+ e Pillow:
-
-```bash
-pip install pillow
-```
+Funciona no Claude Code (app do Claude na aba Code, terminal ou extensão de IDE).
 
 ## Scripts
 

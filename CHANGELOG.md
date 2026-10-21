@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 — 2026-10-21
+
+- Instalação por prompt: `INSTALAR.md` traz o passo a passo que o Claude segue para instalar no nível do usuário (vale para qualquer projeto)
+- Atalhos `/slides-<agente>` para chamar cada um dos 9 agentes direto (pasta `commands/`)
+
 ## 1.0.0 — 2026-10-21
 
 Primeira versão, a partir do projeto-piloto INside 2026.
