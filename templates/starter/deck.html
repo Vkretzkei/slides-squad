@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} · {{DECK}}</title>
+<link rel="stylesheet" href="assets/deck.css">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+<!-- Palco: ajuste data-w/data-h para a proporção do telão (ver data/led-specs.yaml do squad) -->
+<div id="stage" data-w="{{W}}" data-h="{{H}}">
+  <!-- Fundo: mantenha só os efeitos que combinam com as artes do evento -->
+  <div class="bg"><div class="bg-beam"></div></div>
+  <div class="bg bg-grid"></div>
+  <div class="bg"><div class="bg-horizon"></div><div class="bg-flare"></div></div>
+  <div class="bg bg-noise"></div>
+
+  <!-- Moldura fixa: logo do evento, realização/parceiro, rodapé com progresso -->
+  <div class="chrome">
+    <img class="brand" src="assets/logo-evento.png" alt="{{TITLE}}">
+    <div class="partner">REALIZAÇÃO <img src="assets/logo-parceiro.png" alt=""></div>
+    <div class="foot"><span><b>{{TITLE}}</b> · {{DECK}}</span><div class="progress"></div></div>
+  </div>
+
+  <!-- 1. Abertura -->
+  <section class="slide" data-horizon="hero" data-chrome="off" data-title="Abertura">
+    <div class="sparks"></div>
+    <div class="center opening">
+      <div class="logo-lockup">
+        <div class="icon"><img src="assets/logo-evento-icon.png" alt=""></div>
+        <div class="word"><img src="assets/logo-evento-word.png" alt="{{TITLE}}"></div>
+        <div class="shine"></div>
+      </div>
+      <p class="tagline" data-in style="--d:2.4s">Tagline do evento</p>
+    </div>
+    <aside class="notes" hidden>Fundo de espera.</aside>
+  </section>
+
+  <!-- 2. Copie aqui os padrões de templates/patterns/gallery.html do squad -->
+  <section class="slide" data-horizon="low" data-title="Slide 2">
+    <div class="center statement">
+      <div class="eyebrow" data-in style="--d:.2s">Rótulo</div>
+      <h1 data-words style="--d:.5s; margin-top: 30px">Título do slide</h1>
+    </div>
+  </section>
+</div>
+
+<script src="assets/viz.js"></script>
+<script src="assets/deck.js"></script>
+</body>
+</html>

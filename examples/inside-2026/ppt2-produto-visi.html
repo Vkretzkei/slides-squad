@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INside · Produto Visi</title>
+<link rel="stylesheet" href="../../templates/engine/deck.css">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+<div id="stage" data-w="1920" data-h="1080">
+  <div class="bg"><div class="bg-beam"></div></div>
+  <div class="bg bg-grid"></div>
+  <div class="bg"><div class="bg-horizon"></div><div class="bg-flare"></div></div>
+
+  <div class="chrome">
+    <img class="brand" src="assets/logo-inside.png" alt="INSIDE">
+    <div class="partner">PRESENTED <img src="assets/logo-constructin.png" alt="Construct IN"></div>
+    <div class="foot"><span><b>INside 2026</b> · Por dentro do Visi, existe muito mais.</span><div class="progress"></div></div>
+  </div>
+
+  <!-- 1. Abertura / fundo do evento -->
+  <section class="slide" data-horizon="hero" data-chrome="off" data-title="Abertura">
+    <div class="sparks"></div>
+    <div class="center opening">
+      <div class="logo-lockup">
+        <div class="icon"><img src="assets/inside-icon.png" alt=""></div>
+        <div class="word"><img src="assets/inside-word.png" alt="INSIDE"></div>
+        <div class="shine"></div>
+      </div>
+      <p class="tagline" data-in style="--d:2.4s">Por dentro do Visi, <span class="grad-text">existe muito mais.</span></p>
+      <div class="meta" data-in style="--d:2.9s; --anim: fade"><span>PRESENTED BY</span><img src="assets/logo-constructin.png" alt="Construct IN"></div>
+    </div>
+    <aside class="notes" hidden>Fundo de espera. Deixe aqui até o apresentador subir ao palco.</aside>
+  </section>
+
+  <!-- 2. Nuvem de pontos -->
+  <section class="slide" data-title="Nuvem de pontos">
+    <div class="feature">
+      <div>
+        <div class="count" data-in style="--d:.2s; --anim: slide-l">VISI · 01 / 05</div>
+        <h1 data-in style="--d:.35s; --anim: slide-l">Nuvem de pontos</h1>
+        <p class="desc" data-in style="--d:.6s; --anim: slide-l">A obra capturada em milhões de pontos, com medidas reais do que foi executado.</p>
+        <div class="chip live" data-in style="--d:.9s; --anim: fade">Na plataforma</div>
+      </div>
+      <div class="screen">
+        <div class="bar"><i></i><i></i><i></i><span>visi · nuvem de pontos</span></div>
+        <div class="slot" data-src="media/01-nuvem-de-pontos" data-fit="contain">
+          <div class="fallback"><canvas data-viz="pointcloud"></canvas></div>
+          <div class="drop-hint"><div>Arraste um vídeo/GIF aqui ou salve como <code>media/01-nuvem-de-pontos.mp4</code></div></div>
+          <div class="scan"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Sobreposição de projetos -->
+  <section class="slide" data-title="Sobreposição de projetos">
+    <div class="feature">
+      <div>
+        <div class="count" data-in style="--d:.2s; --anim: slide-l">VISI · 02 / 05</div>
+        <h1 data-in style="--d:.35s; --anim: slide-l">Sobreposição de projetos</h1>
+        <p class="desc" data-in style="--d:.6s; --anim: slide-l">O projeto sobre a realidade capturada, para enxergar cada divergência.</p>
+        <div class="chip live" data-in style="--d:.9s; --anim: fade">Na plataforma</div>
+      </div>
+      <div class="screen">
+        <div class="bar"><i></i><i></i><i></i><span>visi · sobreposição de projetos</span></div>
+        <div class="slot" data-src="media/02-sobreposicao-de-projetos" data-fit="contain">
+          <div class="fallback"><canvas data-viz="overlay"></canvas></div>
+          <div class="drop-hint"><div>Arraste um vídeo/GIF aqui ou salve como <code>media/02-sobreposicao-de-projetos.mp4</code></div></div>
+          <div class="scan"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Volumetria -->
+  <section class="slide" data-title="Volumetria">
+    <div class="feature">
+      <div>
+        <div class="count" data-in style="--d:.2s; --anim: slide-l">VISI · 03 / 05</div>
+        <h1 data-in style="--d:.35s; --anim: slide-l">Volumetria</h1>
+        <p class="desc" data-in style="--d:.6s; --anim: slide-l">Volumes calculados direto da captura, sem depender de estimativa.</p>
+        <div class="chip live" data-in style="--d:.9s; --anim: fade">Na plataforma</div>
+      </div>
+      <div class="screen">
+        <div class="bar"><i></i><i></i><i></i><span>visi · volumetria</span></div>
+        <div class="slot" data-src="media/03-volumetria" data-fit="contain">
+          <div class="fallback"><canvas data-viz="volume"></canvas></div>
+          <div class="drop-hint"><div>Arraste um vídeo/GIF aqui ou salve como <code>media/03-volumetria.mp4</code></div></div>
+          <div class="scan"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Ângulo de visão drone 360 -->
+  <section class="slide" data-title="Ângulo de visão drone 360">
+    <div class="feature">
+      <div>
+        <div class="count" data-in style="--d:.2s; --anim: slide-l">VISI · 04 / 05</div>
+        <h1 data-in style="--d:.35s; --anim: slide-l">Ângulo de visão drone 360</h1>
+        <p class="desc" data-in style="--d:.6s; --anim: slide-l">A obra vista do alto, em 360°, a partir de qualquer ponto do voo.</p>
+        <div class="chip live" data-in style="--d:.9s; --anim: fade">Na plataforma</div>
+      </div>
+      <div class="screen">
+        <div class="bar"><i></i><i></i><i></i><span>visi · ângulo de visão drone 360</span></div>
+        <div class="slot" data-src="media/04-angulo-drone-360" data-fit="contain">
+          <div class="fallback"><canvas data-viz="drone"></canvas></div>
+          <div class="drop-hint"><div>Arraste um vídeo/GIF aqui ou salve como <code>media/04-angulo-drone-360.mp4</code></div></div>
+          <div class="scan"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Captura por vídeo -->
+  <section class="slide" data-title="Captura por vídeo">
+    <div class="feature">
+      <div>
+        <div class="count" data-in style="--d:.2s; --anim: slide-l">VISI · 05 / 05</div>
+        <h1 data-in style="--d:.35s; --anim: slide-l">Captura por vídeo</h1>
+        <p class="desc" data-in style="--d:.6s; --anim: slide-l">Um vídeo gravado no canteiro vira um registro navegável da obra.</p>
+        <div class="chip live" data-in style="--d:.9s; --anim: fade">Na plataforma</div>
+      </div>
+      <div class="screen">
+        <div class="bar"><i></i><i></i><i></i><span>visi · captura por vídeo</span></div>
+        <div class="slot" data-src="media/05-captura-por-video" data-fit="contain">
+          <div class="fallback"><canvas data-viz="video"></canvas></div>
+          <div class="drop-hint"><div>Arraste um vídeo/GIF aqui ou salve como <code>media/05-captura-por-video.mp4</code></div></div>
+          <div class="scan"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Equação com destaque para evidência -->
+  <section class="slide" data-horizon="low" data-title="Equação · foco em evidência">
+    <div class="eq-wrap">
+      <div class="eq-title">
+        <div class="eyebrow" data-in style="--d:.2s">A equação da gestão</div>
+        <h2 data-in style="--d:.4s">Tudo começa pela <span class="grad-text">evidência</span></h2>
+      </div>
+      <div class="eq" data-focus-at="3.4">
+        <div class="term" data-in style="--d:.7s"><span class="n">01</span><div class="t">RELATOS</div><div class="s">o que te contam</div></div>
+        <div class="op" data-in style="--d:1s; --anim: pop">+</div>
+        <div class="term" data-in style="--d:1.2s"><span class="n">02</span><div class="t">REFERÊNCIAS</div><div class="s">o que deveria acontecer</div></div>
+        <div class="op" data-in style="--d:1.5s; --anim: pop">+</div>
+        <div class="term hot" data-in style="--d:1.7s"><span class="n">03</span><div class="t">EVIDÊNCIAS</div><div class="s">o que realmente acontece</div></div>
+        <svg class="arrow" viewBox="0 0 110 40" style="--d:2.2s"><path d="M4 20 H100 M84 6 L102 20 L84 34"/></svg>
+        <div class="term result" style="--d:2.6s"><div class="t">DECISÃO</div><div class="s">o que fazer agora</div></div>
+      </div>
+      <p class="eq-note" data-in style="--d:3.8s">A evidência conecta o que foi planejado ao que está sendo construído, e dá segurança à decisão.</p>
+    </div>
+  </section>
+</div>
+
+<script src="../../templates/engine/viz.js"></script>
+<script src="../../templates/engine/deck.js"></script>
+</body>
+</html>

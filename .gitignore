@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# mídias pesadas de exemplos não vão para o repositório
+examples/*/media/*
+!examples/*/media/.gitkeep

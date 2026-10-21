@@ -1,0 +1,68 @@
+# ═══════════════════════════════════════════════════════════════════
+# Routing Catalog: Slides Squad
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════
+
+domains:
+  event_deck:
+    keywords: [slides, apresentação, deck, ppt, palco, telão, LED, painel, evento, keynote, palestra, show]
+    primary_agent: stage-director
+    workflow: wf-event-deck
+    description: "Deck(s) completo(s) para evento a partir de briefing e artes"
+
+  quick_piece:
+    keywords: [vinheta, abertura, logo animado, fundo de palco, loop, espera, intervalo, contagem regressiva, countdown]
+    primary_agent: stage-director
+    workflow: wf-quick-slide
+    description: "Peça avulsa animada"
+
+  narrative:
+    keywords: [roteiro, história, arco, ordem dos slides, mensagem principal, big idea, momento marcante]
+    primary_agent: nancy-duarte
+    secondary_agent: garr-reynolds
+    description: "Estrutura e narrativa da apresentação"
+
+  simplicity:
+    keywords: [muito texto, poluído, bullets, simplificar, limpar, foco]
+    primary_agent: garr-reynolds
+    secondary_agent: art-director
+    description: "Cortes, clareza, teste de 3 segundos"
+
+  brand:
+    keywords: [identidade visual, cores, fonte, logo, manual de marca, landing page, artes, estilo]
+    primary_agent: brand-decoder
+    secondary_agent: art-director
+    description: "Extração de identidade e tema"
+
+  layout:
+    keywords: [layout, composição, hierarquia, grid, padrão de slide, alinhamento]
+    primary_agent: art-director
+    secondary_agent: deck-builder
+    description: "Composição e escolha de padrões"
+
+  motion:
+    keywords: [animação, transição, entrada, build, clique, efeito, movimento, ritmo]
+    primary_agent: motion-designer
+    secondary_agent: deck-builder
+    description: "Coreografia de movimento"
+
+  technical:
+    keywords: [resolução, proporção, pixel pitch, distância, projetor, TV, operador, passador, offline, apresentador]
+    primary_agent: led-engineer
+    secondary_agent: stage-qa
+    description: "Adaptação a equipamento e operação"
+
+  build:
+    keywords: [html, código, gerar, construir, editar slide, mídia, vídeo, gif]
+    primary_agent: deck-builder
+    description: "Construção e alteração de decks"
+
+  qa:
+    keywords: [revisar, conferir, testar, ensaio, bug, quebrado, cortado]
+    primary_agent: stage-qa
+    description: "Revisão visual e ensaio técnico"
+
+tie_breakers:
+  - "Se tem artes + lista de slides → event_deck (fluxo completo)"
+  - "Se é uma peça só, sem narrativa → quick_piece"
+  - "Se o deck já existe → tasks/iterate.md"

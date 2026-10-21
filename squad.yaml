@@ -1,0 +1,52 @@
+name: slides-squad
+version: "1.0.0"
+short-title: "Slides Squad"
+description: "Squad de apresentações animadas para palco/telão/LED — 2 experts (Nancy Duarte, Garr Reynolds) + 6 especialistas + 1 orquestrador. Briefing e artes → decks HTML offline prontos para o show."
+author: "Vkretzkei"
+license: MIT
+slashPrefix: "slides-squad"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - presentations
+  - slides
+  - events
+  - led-wall
+  - motion-design
+  - brand
+  - stage
+
+components:
+  agents:
+    - stage-director.md
+    - nancy-duarte.md
+    - garr-reynolds.md
+    - brand-decoder.md
+    - art-director.md
+    - motion-designer.md
+    - led-engineer.md
+    - deck-builder.md
+    - stage-qa.md
+  tasks:
+    - diagnose.md
+    - intake-briefing.md
+    - decode-brand.md
+    - plan-deck.md
+    - choreograph-motion.md
+    - build-deck.md
+    - led-fit.md
+    - review.md
+    - deliver.md
+    - iterate.md
+  workflows:
+    - wf-event-deck.yaml
+    - wf-quick-slide.yaml
+  checklists:
+    - output-quality.md
+    - show-readiness.md
+
+config:
+  extends: extend

@@ -1,0 +1,57 @@
+# ═══════════════════════════════════════════════════════════════════
+# Briefing — Slides Squad
+# Preenchido na tasks/intake-briefing.md. Status por campo:
+#   ok = veio no pedido | premissa = inferido (explicar em premissas) | falta = perguntar
+# ═══════════════════════════════════════════════════════════════════
+
+evento:
+  nome: ""                 # ex.: INside 2026
+  realizacao: ""           # empresa/marca que realiza (ex.: Construct IN)
+  data: ""                 # ex.: 02/12/2026 16h
+  formato: ""              # presencial | online | híbrido
+  tagline: ""              # ex.: Por dentro do Visi, existe muito mais.
+  landing_page: ""         # URL
+  plateia: ""              # quem assiste, o que sabe, o que precisa levar
+
+materiais:                 # tudo que foi recebido
+  artes: []                # caminhos de imagens (posts, save the date, banners)
+  logos: []                # caminhos de logos
+  outros: []               # manual de marca, e-mail, fotos, vídeos
+  links: []
+
+telao:
+  tipo: ""                 # LED | TV | projetor | não informado
+  resolucao: ""            # ex.: 1920x1080 | 3840x1080 | não informado
+  proporcao: "16:9"        # premissa padrão
+  distancia_ultima_fileira_m: null
+  transmissao: false       # vai ter câmera/stream?
+
+operacao:
+  controle_do_apresentador: "auto"   # auto | clique | misto
+  passador: null                     # true/false
+  modo_apresentador: false           # vai usar notebook com notas?
+  offline: true
+
+decks:
+  - id: deck-1
+    nome: ""               # ex.: PPT 1 — Equação da Gestão
+    uso: ""                # ex.: telão LED durante a palestra de abertura
+    slides:
+      - n: 1
+        titulo: ""         # texto EXATO do cliente
+        conteudo: ""       # o que o cliente pediu
+        animacao_pedida: ""
+        midia: ""          # ex.: vídeo da feature (não enviado)
+        status: ok         # ok | premissa | falta
+
+textos:
+  permitir_sugestoes: true   # o squad pode sugerir subtítulos/descrições curtas (marcados como sugestão)
+
+entregaveis:
+  html_animado: true
+  pdf: false
+  pptx: false
+
+premissas: []              # - "Telão 16:9 1920x1080 (não informado)"
+ambiguidades: []           # - pedido: "slide 5 diz REFERÊNCIA" ; interpretação: "é EVIDÊNCIA"
+pendencias: []             # - "Vídeos das 5 features"

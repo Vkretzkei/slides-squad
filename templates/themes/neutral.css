@@ -1,0 +1,20 @@
+/* Tema neutro — usado na galeria de padrões e como ponto de partida.
+   Substitua por um theme.css gerado com scripts/make_theme.py. */
+:root {
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --bg: #06070d;
+  --bg-deep: #020309;
+  --ink: #ffffff;
+  --muted: rgba(255,255,255,.62);
+  --faint: rgba(255,255,255,.14);
+  --brand-1: #4b3bff;
+  --brand-2: #2f7bff;
+  --brand-3: #2fd3ff;
+  --accent: #ff7a59;
+  --on-brand: #ffffff;
+  --glow: 47 211 255;
+  --glow-2: 75 59 255;
+  --glow-3: 255 122 89;
+  --grad-text: linear-gradient(100deg, #8f86ff 0%, #59b6ff 55%, #8ff0ff 100%);
+  --radius: 24px;
+}

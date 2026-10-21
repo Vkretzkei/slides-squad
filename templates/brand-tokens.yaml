@@ -1,0 +1,55 @@
+# ═══════════════════════════════════════════════════════════════════
+# Brand tokens — preenchido pelo brand-decoder
+# Gere o tema: python scripts/make_theme.py brand-tokens.yaml assets/theme.css
+# Formato simples (chave: valor, 2 níveis) para o make_theme funcionar sem dependências.
+# confianca: alta (medido) | media (inferido das artes) | baixa (premissa)
+# ═══════════════════════════════════════════════════════════════════
+
+marca:
+  nome: "Nome do Evento"
+  origem: "artes do evento + landing page"
+
+fonte:
+  familia: "Outfit"            # nome exato da família
+  arquivo: "outfit.woff2"      # dentro de assets/ (scripts/fetch_font.py)
+  display: ""                  # fonte de títulos, se diferente (vazio = mesma)
+  display_arquivo: ""
+  confianca: "alta"
+
+cores:
+  bg: "#04050b"                # fundo do palco
+  bg_deep: "#02030a"           # fundo mais profundo (horizonte)
+  ink: "#ffffff"               # texto principal
+  muted: "rgba(255,255,255,.62)"
+  faint: "rgba(255,255,255,.14)"
+  brand_1: "#0040ff"           # cor principal, mais saturada
+  brand_2: "#0a84ff"
+  brand_3: "#00b4ff"           # mais clara / destaque em texto pequeno
+  accent: "#a98bff"            # secundária (usar pouco)
+  on_brand: "#ffffff"          # texto sobre o gradiente da marca
+  confianca: "alta"
+
+brilhos:                       # R G B sem vírgula
+  glow: "0 180 255"
+  glow_2: "0 80 255"
+  glow_3: "120 90 255"
+
+texto_gradiente:
+  inicio: "#6aa8ff"
+  meio: "#4fc3ff"
+  fim: "#8fe0ff"
+
+forma:
+  raio: "26px"                 # cantos de cards
+  pad_x: "96px"
+
+motivos:                       # lista livre para o art-director
+  m1: "Arco de luz/horizonte azul sobre fundo preto (landing page) → bg-horizon"
+  m2: "Tag retangular azul 'Online e gratuito' → .tag"
+  m3: "Feixe de luz roxo diagonal (save the date) → bg-beam"
+
+logos:
+  evento_completo: "logo-evento.png"
+  evento_simbolo: "logo-evento-icon.png"
+  evento_assinatura: "logo-evento-word.png"
+  parceiro: "logo-parceiro.png"

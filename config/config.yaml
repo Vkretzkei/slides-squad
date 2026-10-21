@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════════════════════════════════
+# Squad: Slides Squad
+# Domain: Apresentações e painéis animados para eventos
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════
+
+squad:
+  name: slides-squad
+  display_name: "Slides Squad — Palco & Telão"
+  version: "1.0.0"
+  domain: "Apresentações animadas para palco, telão LED, TV e projetor"
+  description: |
+    Transforma o que o cliente manda (texto do pedido, artes do evento, logos, landing page)
+    em decks HTML animados no estilo da marca, prontos para rodar offline no telão, com
+    modo apresentador, builds por clique e mídia com fallback. Combina narrativa (Nancy Duarte),
+    clareza (Garr Reynolds), identidade, direção de arte, motion, técnica de LED, construção e QA.
+  keywords: [slides, apresentação, palco, telão, LED, evento, motion, keynote, painel, marca]
+  entry_agent: stage-director
+  created_at: "2026-10-21"
+
+tiers:
+  tier_0:
+    name: "Orquestração"
+    agents: [stage-director]
+    purpose: "Diagnóstico, pipeline, portões de qualidade, entrega"
+  tier_1:
+    name: "Mestres da apresentação"
+    agents: [nancy-duarte, garr-reynolds]
+    purpose: "Narrativa e clareza"
+  tier_2:
+    name: "Produção"
+    agents: [brand-decoder, art-director, motion-designer, led-engineer, deck-builder, stage-qa]
+    purpose: "Identidade, composição, movimento, técnica, construção e qualidade"
+
+agents:
+  stage-director:  { file: agents/stage-director.md, tier: 0, icon: "🎬", focus: "Pipeline e qualidade" }
+  nancy-duarte:    { file: agents/nancy-duarte.md, tier: 1, icon: "📖", focus: "Arco narrativo, big idea, momento-chave" }
+  garr-reynolds:   { file: agents/garr-reynolds.md, tier: 1, icon: "🍃", focus: "Simplicidade e cortes" }
+  brand-decoder:   { file: agents/brand-decoder.md, tier: 2, icon: "🔍", focus: "Artes/logos/LP → tokens" }
+  art-director:    { file: agents/art-director.md, tier: 2, icon: "🎨", focus: "Padrões e composição" }
+  motion-designer: { file: agents/motion-designer.md, tier: 2, icon: "✨", focus: "Coreografia de animação" }
+  led-engineer:    { file: agents/led-engineer.md, tier: 2, icon: "📺", focus: "Telão e operação" }
+  deck-builder:    { file: agents/deck-builder.md, tier: 2, icon: "🛠️", focus: "HTML no motor do squad" }
+  stage-qa:        { file: agents/stage-qa.md, tier: 2, icon: "✅", focus: "Revisão visual e ensaio" }
+
+handoffs:
+  stage-director: { routes_to: [nancy-duarte, garr-reynolds, brand-decoder, art-director, motion-designer, led-engineer, deck-builder, stage-qa] }
+  nancy-duarte: { feeds: [garr-reynolds, art-director], escalates_to: [stage-director] }
+  garr-reynolds: { feeds: [art-director], escalates_to: [stage-director] }
+  brand-decoder: { feeds: [art-director, deck-builder], escalates_to: [stage-director] }
+  art-director: { feeds: [motion-designer, deck-builder], escalates_to: [stage-director] }
+  motion-designer: { feeds: [deck-builder], escalates_to: [stage-director] }
+  led-engineer: { feeds: [deck-builder, stage-qa], escalates_to: [stage-director] }
+  deck-builder: { feeds: [stage-qa], escalates_to: [stage-director] }
+  stage-qa: { returns_to: [deck-builder], escalates_to: [stage-director] }
+
+cross_cutting:
+  quality_standards: { min_score: 8.0, gate: "zero itens CRÍTICOS nos checklists" }
+
+settings:
+  activation:
+    prefix: "slides-squad"
+    example: "@slides-squad:stage-director"
+  defaults:
+    palco: "1920x1080"
+    controle: "auto (builds longos por clique)"
+    entregavel: "HTML offline"

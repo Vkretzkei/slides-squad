@@ -1,0 +1,125 @@
+# ═══════════════════════════════════════════════════════════════════
+# Catálogo de padrões de slide — Slides Squad
+# Cada padrão tem um bloco pronto em templates/patterns/gallery.html
+# (procure o comentário "PADRÃO: <id>").
+# ═══════════════════════════════════════════════════════════════════
+
+patterns:
+  opening:
+    nome: "Abertura com logo"
+    funcao: [abertura, fundo de espera, encerramento de marca]
+    estrutura: ".center.opening > .logo-lockup (.icon + .word + .shine) + .tagline + .meta; .sparks"
+    slide_attrs: 'data-horizon="hero" data-chrome="off"'
+    requer: "Logo separado em símbolo e assinatura (prepare_logo.py --split). Sem separação: usar <img class='full'>"
+    animacao: "icon-in (3D) → word-in → shine; tagline com --d ≥ 2.4s"
+    quando_usar: "Primeiro slide de todo deck; tela de fundo antes/depois das falas"
+
+  statement:
+    nome: "Frase de impacto"
+    funcao: [tese, retorno, transição de capítulo]
+    estrutura: ".center.statement > .eyebrow + h1[data-words] + p"
+    animacao: "data-words com rise e --stagger .06-.1s"
+    limite: "≤ 12 palavras no h1"
+    quando_usar: "Ideia central, frase repetível, virada de capítulo"
+
+  equation:
+    nome: "Equação / fórmula se montando"
+    funcao: [tese, modelo mental]
+    estrutura: ".eq-wrap > .eq-title + .eq > (.term + .op)* + svg.arrow + .term.result"
+    animacao: "Termos com rise, operadores com pop, seta com draw, resultado com decide + anel"
+    limite: "Até 4 termos + resultado em 1920px. Mais que isso: quebrar em 2 linhas ou usar builds"
+    quando_usar: "Framework de 2-4 partes que levam a um resultado"
+
+  equation-focus:
+    nome: "Equação com foco em um termo"
+    funcao: [retorno, ênfase]
+    estrutura: "Igual a equation + .eq[data-focus-at='s'] + .term.hot + .eq-note"
+    animacao: "Monta rápido e depois apaga os outros termos, destacando o .hot"
+    quando_usar: "Fechar um bloco voltando ao modelo com destaque no que acabou de ser mostrado"
+
+  spotlight:
+    nome: "Holofote: termo + cards"
+    funcao: [desdobramento]
+    estrutura: ".spotlight > (div > .num + h1 + .quote + .mini-eq?) + .cards.c4|c3|c2 > .card"
+    animacao: "Coluna esquerda com slide-l; cards com card-in em stagger"
+    limite: "2-4 cards; título do h1 com 1 palavra ou 2 curtas"
+    quando_usar: "Explicar uma parte de um modelo com exemplos"
+
+  panel:
+    nome: "Holofote com painel"
+    funcao: [desdobramento]
+    estrutura: ".spotlight > (coluna) + .panel > .panel-top (.lbl + .phrase) + .cards.c3"
+    quando_usar: "Quando os exemplos pertencem a um 'sistema' ou 'painel' (ex.: 'o que deveria acontecer')"
+
+  media-cards:
+    nome: "Cards com mídia real"
+    funcao: [prova, evidência]
+    estrutura: ".cards.c3 > .card.media-card > .slot[data-src] + .badge + .cap"
+    animacao: "card-in em stagger; fallback data-viz enquanto a mídia não chega"
+    quando_usar: "Mostrar 2-3 tipos de imagem/vídeo real lado a lado"
+
+  feature:
+    nome: "Vitrine de funcionalidade (texto + tela)"
+    funcao: [prova, demo]
+    estrutura: ".feature > (div > .count + h1 + .desc + .chip.live) + .screen > .bar + .slot[data-src][data-fit=contain]"
+    variante: ".feature.full = tela grande sem coluna de texto (título acima)"
+    animacao: "Texto slide-l; tela screen-in (3D) + scan"
+    limite: "Título ≤ 3 linhas na coluna de 540px a 76px (≈ 12 caracteres por linha)"
+    quando_usar: "Série de features de produto: mesmo padrão em todos para o público aprender a ler"
+
+  bignum:
+    nome: "Número gigante"
+    funcao: [prova, impacto]
+    estrutura: ".center.bignum > .value(+.unit) + .label + .src"
+    variante: ".stats com 2-3 números lado a lado"
+    animacao: "zoom-out no número; label rise"
+    quando_usar: "Um dado que precisa ser lembrado. Fonte sempre citada"
+
+  agenda:
+    nome: "Agenda / roteiro do evento"
+    funcao: [abertura, transição]
+    estrutura: ".agenda > h1 + ol > li (.time + texto + .who), .now/.done"
+    quando_usar: "Programação do dia; repetir com .now no item atual entre blocos"
+
+  speaker:
+    nome: "Apresentador(a)"
+    funcao: [transição, apresentação de palestrante]
+    estrutura: ".speaker > .photo > img + (div > .role + h1 + .topic + img.company)"
+    quando_usar: "Chamar alguém ao palco"
+
+  quote:
+    nome: "Citação"
+    funcao: [prova social, emoção]
+    estrutura: ".center.quote-slide > blockquote + cite"
+    limite: "≤ 25 palavras"
+    quando_usar: "Depoimento real (nunca inventado)"
+
+  timeline:
+    nome: "Linha do tempo"
+    funcao: [história, roadmap]
+    estrutura: ".timeline > .bar + .pt*(.yr + p)"
+    limite: "3-6 pontos"
+    quando_usar: "Evolução, marcos, roadmap"
+
+  closing:
+    nome: "Encerramento / chamada para ação"
+    funcao: [fecho]
+    estrutura: ".center.closing > h1 + p + .qr > img + texto"
+    quando_usar: "Último slide: obrigado, contato, QR"
+
+  countdown:
+    nome: "Contagem regressiva / volta em X min"
+    funcao: [espera, intervalo]
+    estrutura: ".center.countdown > .label + .clock[data-countdown]"
+    quando_usar: "Antes de começar, intervalos"
+
+backdrops:
+  bg-horizon: "Arco de luz (planeta/horizonte). data-horizon no slide: hero (abertura, conteúdo centralizado pequeno) | mid (só com conteúdo na metade de cima) | low (padrão para conteúdo centralizado) | off"
+  bg-grid: "Grid fino com máscara radial. Opacidade baixa (moiré)"
+  bg-beam: "Feixe de luz cônico girando devagar"
+  bg-aurora: "Manchas de luz difusas se movendo"
+  bg-noise: "Granulado sutil (reduz banding em LED)"
+
+rules:
+  - "Não colocar 3 padrões iguais seguidos, exceto séries intencionais"
+  - "Padrão novo: implementar no deck.css do squad + bloco na gallery.html + entrada aqui"

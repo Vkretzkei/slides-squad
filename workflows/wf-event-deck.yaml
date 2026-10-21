@@ -1,0 +1,89 @@
+# ═══════════════════════════════════════════════════════════════════
+# Workflow: Deck de evento completo — do briefing ao palco
+# ═══════════════════════════════════════════════════════════════════
+
+workflow:
+  id: wf-event-deck
+  name: "Deck de Evento (Palco/Telão/LED)"
+  trigger: "*novo"
+  entry_agent: stage-director
+  estimated_duration: "1-3 horas de agente para 2 decks de ~6 slides"
+  description: |
+    Pipeline completo: lê briefing e artes, extrai identidade, monta roteiro aprovado,
+    coreografa animações, constrói decks HTML no motor do squad, adapta ao telão,
+    faz QA com screenshot de cada slide e entrega pasta pronta para o operador.
+
+phases:
+  - id: phase_1_intake
+    name: "Intake do briefing"
+    agent: stage-director
+    task: intake-briefing.md
+    depends_on: []
+    checkpoint:
+      gate: "briefing.yaml completo; premissas declaradas; perguntas respondidas"
+      veto: "PARAR se não houver nenhum material de marca E o usuário não aceitar um visual neutro"
+    outputs: [briefing]
+
+  - id: phase_2_brand
+    name: "Decodificar identidade"
+    agent: brand-decoder
+    task: decode-brand.md
+    depends_on: [phase_1_intake]
+    checkpoint:
+      gate: "theme.css gerado; fonte offline; logos em branco; motivos listados"
+      veto: "PARAR se o logo só existir em baixíssima resolução para abertura em tela cheia — pedir arquivo melhor ou declarar"
+    outputs: [brand_tokens, theme, assets]
+
+  - id: phase_3_plan
+    name: "Roteiro (deck-plan)"
+    agent: art-director
+    support_agents: [nancy-duarte, garr-reynolds]
+    task: plan-deck.md
+    depends_on: [phase_2_brand]
+    checkpoint:
+      gate: "deck-plan aprovado pelo usuário (ou 'pode seguir')"
+      veto: "PARAR se houver texto essencial ambíguo sem resposta"
+    outputs: [deck_plan]
+
+  - id: phase_4_motion
+    name: "Coreografia"
+    agent: motion-designer
+    task: choreograph-motion.md
+    depends_on: [phase_3_plan]
+    checkpoint:
+      gate: "Partitura completa; auto-montagem ≤ 5s por slide"
+    outputs: [partitura]
+
+  - id: phase_5_build
+    name: "Construção"
+    agent: deck-builder
+    task: build-deck.md
+    depends_on: [phase_4_motion]
+    checkpoint:
+      gate: "Todos os decks abrem e navegam; textos batem com o deck-plan"
+    outputs: [decks]
+
+  - id: phase_6_led
+    name: "Ajuste de telão"
+    agent: led-engineer
+    task: led-fit.md
+    depends_on: [phase_5_build]
+    skip_if: "telão 16:9 confirmado ou assumido e distância normal"
+    outputs: [decks_ajustados]
+
+  - id: phase_7_qa
+    name: "QA e ensaio técnico"
+    agent: stage-qa
+    task: review.md
+    depends_on: [phase_5_build, phase_6_led]
+    checkpoint:
+      gate: "Zero itens CRÍTICOS nos dois checklists"
+      veto: "Voltar para phase_5_build enquanto houver crítico"
+    outputs: [qa_report]
+
+  - id: phase_8_deliver
+    name: "Entrega"
+    agent: stage-director
+    task: deliver.md
+    depends_on: [phase_7_qa]
+    outputs: [entrega]

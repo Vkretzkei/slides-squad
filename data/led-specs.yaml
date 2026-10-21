@@ -1,0 +1,71 @@
+# ═══════════════════════════════════════════════════════════════════
+# Referência técnica de telões — LED Engineer
+# Valores práticos de mercado de eventos. Sempre preferir o dado real
+# do fornecedor de LED (resolução do processador/canvas).
+# ═══════════════════════════════════════════════════════════════════
+
+default:
+  proporcao: "16:9"
+  palco: { w: 1920, h: 1080 }
+  premissa: "Usar quando o cliente não informar. Declarar no LEIA-ME."
+
+aspect_presets:
+  "16:9":   { w: 1920, h: 1080, nota: "TVs, projetores, maioria dos LEDs de palco" }
+  "16:10":  { w: 1728, h: 1080, nota: "Alguns projetores e notebooks" }
+  "4:3":    { w: 1440, h: 1080, nota: "Projetores antigos" }
+  "21:9":   { w: 2520, h: 1080, nota: "LED largo" }
+  "32:9":   { w: 3840, h: 1080, nota: "Ultra-wide: usar layout em zonas" }
+  "3:1":    { w: 3240, h: 1080, nota: "Fundo de palco comum em eventos corporativos" }
+  "9:16":   { w: 1080, h: 1920, nota: "Totem vertical / LED vertical" }
+  "1:1":    { w: 1080, h: 1080, nota: "Módulos quadrados, laterais de palco" }
+
+from_physical:
+  formula_px: "pixels = metros / pixel_pitch_mm × 1000"
+  exemplo: "LED 6m x 3,375m, P3.9 → 1538 x 865 px (≈16:9). Use palco 1920x1080: o processador escala"
+  regra: "Se a resolução nativa for menor que 1080 de altura, ainda desenhar em 1080 e deixar o navegador/processador escalar; NÃO reduzir o palco"
+
+pixel_pitch_viewing:
+  P1.9: "≥ 2 m"
+  P2.6: "≥ 3 m"
+  P2.9: "≥ 3 m"
+  P3.9: "≥ 4 m"
+  P4.8: "≥ 5 m"
+  P5.9: "≥ 6 m (outdoor/grandes arenas)"
+
+legibility:
+  regra_pratica: "Altura da letra (x-height aprox.) ≥ distância / 200"
+  conversao: "px_no_palco ≈ (distancia_m / 200) / altura_fisica_tela_m × data_h"
+  exemplo: "Última fileira a 20 m, telão de 3 m de altura, palco 1080 → (20/200)/3×1080 = 36px de altura de letra (~48px de corpo de fonte)"
+  minimos_1080p:
+    conteudo_essencial: "≥ 26px (≥ 22px absoluto)"
+    rotulos_secundarios: "≥ 18px"
+    titulo: "≥ 70px"
+
+ultrawide:
+  zonas: "Dividir em 3: esquerda (marca/título), centro (herói), direita (apoio ou repetição do herói para a lateral da plateia)"
+  cuidado: "Plateia lateral vê só um lado: informação crítica no centro ou repetida"
+
+risks:
+  moire: "Grids finos e listras regulares tremem na câmera. Opacidade ≤ 6%, espaçamento ≥ 120px"
+  linhas_finas: "1px pode sumir após escala. Mínimo 2px para linhas com função"
+  branco_chapado: "Ofusca plateia e estoura câmera. Fundo escuro; branco só em texto e detalhes"
+  banding: "Gradientes escuros longos mostram faixas. Usar .bg-noise"
+  fotossensibilidade: "Nada piscando > 3x/s; evitar alternância claro/escuro em grandes áreas"
+  preto_absoluto: "Em LED, #000 é LED apagado e evidencia módulos com defeito/costura; preferir #04050b-#0a0c14"
+
+video_spec:
+  container: "MP4 (H.264), .webm aceito"
+  resolucao: "Do tamanho do espaço no slide ou 1920x1080"
+  fps: 30
+  bitrate: "8-20 Mbps"
+  audio: "Sem áudio (o motor toca mudo)"
+  loop: "Primeiro e último frame casando quando for loop"
+  gif: "Só para trechos curtos (< 8s); preferir MP4"
+  nomes: "media/NN-nome-em-kebab.mp4 (sem acento)"
+
+operation:
+  navegador: "Chrome ou Edge atualizados; desativar notificações do sistema; modo avião se possível"
+  saidas: "Notebook estendido: deck no telão em tela cheia (F), ?presenter no notebook"
+  passador: "Clickers comuns enviam PageDown/PageUp — suportado"
+  emergencia: "B = tela preta. R = repetir animação. Número = pular para slide"
+  energia: "Notebook na tomada; motor pede wake lock em tela cheia"

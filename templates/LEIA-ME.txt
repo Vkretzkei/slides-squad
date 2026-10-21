@@ -1,0 +1,51 @@
+{{TITULO}} — SLIDES PARA TELÃO
+==============================================
+
+ABRIR
+  Dê dois cliques no arquivo .html do deck (Chrome ou Edge).
+  Funciona offline. Mantenha as pastas "assets" e "media" junto dos arquivos.
+
+DECKS
+{{LISTA_DE_DECKS}}
+
+CONTROLES
+  →  Espaço  Enter  PageDown  Clique ..... próximo (passadores/clickers funcionam)
+  ←  PageUp  Botão direito ............... anterior
+  F ...................................... tela cheia (use no telão)
+  B ...................................... tela preta (aperte de novo para voltar)
+  R ...................................... repetir a animação do slide atual
+  1 a 9  /  Home  /  End ................. ir direto para um slide / início / fim
+  P ...................................... abrir o MODO APRESENTADOR
+  G ...................................... guia de área segura (alinhar com a equipe de LED)
+  C ...................................... esconder as dicas "arraste um vídeo aqui"
+  H ...................................... ajuda na tela
+  O cursor some sozinho depois de 2 segundos parado.
+
+MODO APRESENTADOR
+  Com o notebook ligado ao telão em modo "estender":
+  1. Abra o deck e arraste a janela para o telão. Aperte F.
+  2. No notebook, aperte P (ou abra o mesmo arquivo com ?presenter no fim do endereço).
+  3. A janela do apresentador mostra notas, cronômetro e o próximo slide.
+     Avançar em qualquer uma das janelas avança a outra.
+
+FORMATO
+  Palco: {{PALCO}}. Em telas de outra proporção o slide fica centralizado
+  com bordas pretas. {{PREMISSA_TELAO}}
+
+MÍDIAS (vídeos, GIFs, imagens)
+  Salve na pasta "media" com EXATAMENTE estes nomes (extensão: mp4, webm, mov, gif, png, jpg):
+{{LISTA_DE_MIDIAS}}
+  Enquanto o arquivo não existir, aparece uma animação ilustrativa no lugar.
+  Para testar rápido, arraste o vídeo direto no espaço do slide (vale até recarregar).
+
+  Especificação recomendada: MP4 (H.264), 1920x1080, 30fps, SEM áudio, até 20 Mbps.
+  Vídeos tocam mudos, em loop, e recomeçam sempre que o slide entra.
+
+EDITAR TEXTOS
+  Abra o .html num editor de texto (Bloco de Notas, VS Code). Cada slide começa
+  com um comentário <!-- N. Nome -->. Troque só o texto entre as tags.
+  Cores e fonte ficam em assets/theme.css.
+
+NO DIA DO EVENTO
+  - Notebook na tomada, notificações desligadas, de preferência em modo avião.
+  - Teste o passador antes. Tenha uma cópia da pasta num pendrive.

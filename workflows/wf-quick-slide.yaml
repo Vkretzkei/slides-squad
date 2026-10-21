@@ -1,0 +1,49 @@
+# ═══════════════════════════════════════════════════════════════════
+# Workflow: Slide rápido — um slide, vinheta, abertura ou loop de espera
+# ═══════════════════════════════════════════════════════════════════
+
+workflow:
+  id: wf-quick-slide
+  name: "Slide Rápido / Loop de Espera"
+  trigger: "*slide-rapido"
+  entry_agent: stage-director
+  estimated_duration: "15-40 minutos de agente"
+  description: |
+    Para peças avulsas: abertura com logo, fundo de palco, contagem regressiva,
+    loop de patrocinadores, slide de intervalo, "volta em 10 minutos".
+    Mesmo motor e mesmo QA, com roteiro reduzido.
+
+phases:
+  - id: q1_brief
+    name: "Briefing curto"
+    agent: stage-director
+    task: intake-briefing.md
+    notes: "Só: o que é a peça, quanto tempo fica no ar, se gira sozinha, materiais de marca, telão"
+
+  - id: q2_brand
+    name: "Identidade"
+    agent: brand-decoder
+    task: decode-brand.md
+    depends_on: [q1_brief]
+    skip_if: "o projeto já tem theme.css"
+
+  - id: q3_build
+    name: "Peça"
+    agent: deck-builder
+    support_agents: [motion-designer]
+    task: build-deck.md
+    depends_on: [q2_brand]
+    notes: "Padrões típicos: opening, countdown, statement, loop de logos (slides com data-auto + body data-loop)"
+
+  - id: q4_qa
+    name: "QA"
+    agent: stage-qa
+    task: review.md
+    depends_on: [q3_build]
+    notes: "Para loops: deixar rodar 2 ciclos completos e checar a emenda"
+
+  - id: q5_deliver
+    name: "Entrega"
+    agent: stage-director
+    task: deliver.md
+    depends_on: [q4_qa]

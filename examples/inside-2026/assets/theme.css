@@ -1,0 +1,21 @@
+/* Tema gerado a partir de brand-tokens.yaml — INside 2026 (Construct IN) */
+@font-face { font-family: "Outfit"; src: url("outfit.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+
+:root {
+  --font: "Outfit", system-ui, sans-serif;
+  --bg: #04050b;
+  --bg-deep: #02030a;
+  --ink: #ffffff;
+  --muted: rgba(255,255,255,.62);
+  --faint: rgba(255,255,255,.14);
+  --brand-1: #0040ff;
+  --brand-2: #0a84ff;
+  --brand-3: #00b4ff;
+  --accent: #a98bff;
+  --on-brand: #ffffff;
+  --glow: 0 180 255;
+  --glow-2: 0 80 255;
+  --glow-3: 120 90 255;
+  --grad-text: linear-gradient(100deg, #6aa8ff 0%, #4fc3ff 60%, #8fe0ff 100%);
+  --radius: 26px;
+}
