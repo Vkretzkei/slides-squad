@@ -6,10 +6,6 @@ author: "Vkretzkei"
 license: MIT
 slashPrefix: "slides-squad"
 
-aios:
-  minVersion: "4.0.0"
-  type: squad
-
 tags:
   - presentations
   - slides
@@ -47,6 +43,3 @@ components:
   checklists:
     - output-quality.md
     - show-readiness.md
-
-config:
-  extends: extend

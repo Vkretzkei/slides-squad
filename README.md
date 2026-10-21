@@ -2,7 +2,7 @@
 
 Squad de agentes que transforma **briefing + artes do evento + logos + landing page** em **apresentações animadas para telão LED, TV ou projetor** — no estilo da marca, rodando offline, prontas para operar ao vivo.
 
-Segue o formato de squads do [Xquads](https://github.com/ohmyjahh/xquads-squads) (Agent Skills, padrão aberto): funciona no Claude Code e em qualquer cliente que leia skills.
+É uma Agent Skill independente: funciona no Claude Code e em qualquer cliente que leia skills.
 
 ---
 

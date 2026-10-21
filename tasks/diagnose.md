@@ -41,7 +41,7 @@ Checklist:
 | Só quer extrair identidade/tema | `tasks/decode-brand.md` |
 | Revisar um deck pronto (deste squad ou não) | `tasks/review.md` |
 | Arquivo PowerPoint/Keynote/Google Slides como entregável | Avisar: este squad entrega HTML animado. Exportação para .pptx perde animações; se o usuário insistir, encaminhar para a skill de pptx do ambiente usando o deck-plan como fonte |
-| Copy de vendas, campanha, tráfego | Fora do escopo — indicar o Xquads (copy-squad, marketing-squad) |
+| Copy de vendas, campanha, tráfego | Fora do escopo deste squad — dizer isso ao usuário |
 
 ## Anunciar
 
