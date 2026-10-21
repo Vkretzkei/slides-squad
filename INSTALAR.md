@@ -24,12 +24,27 @@ Crie `.claude/skills` e `.claude/commands` se não existirem. **Nunca** instale 
 ### 2. Baixar o squad em `~/.claude/skills/slides-squad`
 
 - **Já existe e é um repositório git** → atualize: `git -C <pasta> pull`.
-- **Já existe e não é git** → renomeie para `slides-squad.bak-AAAAMMDD` (não apague) e instale de novo.
+- **Já existe e não é git** (instalação antiga por ZIP) → mova a pasta para **fora** de `skills`, em `<home>/.claude/slides-squad.bak-AAAAMMDD` (não apague; e não deixe o backup dentro de `skills`, senão o Claude carrega dois squads com o mesmo nome). Depois instale de novo.
 - **Não existe**:
-  - Com git: `git clone https://github.com/Vkretzkei/slides-squad.git <home>/.claude/skills/slides-squad`
-  - Sem git: baixe `https://github.com/Vkretzkei/slides-squad/archive/refs/heads/main.zip`, extraia num diretório temporário e mova a pasta `slides-squad-main` para `<home>/.claude/skills/slides-squad`.
-    - Windows: `Invoke-WebRequest <url> -OutFile $env:TEMP\slides-squad.zip; Expand-Archive $env:TEMP\slides-squad.zip $env:TEMP\slides-squad-zip -Force`
-    - Mac/Linux: `curl -L <url> -o /tmp/slides-squad.zip && unzip -q /tmp/slides-squad.zip -d /tmp/slides-squad-zip`
+  - Com git: `git clone https://github.com/Vkretzkei/slides-squad.git <home>/.claude/skills/slides-squad` (o git escreve "Cloning into…" na saída de erro; isso é normal, confira o código de saída 0).
+  - Sem git: baixe o ZIP, extraia numa pasta temporária, mova `slides-squad-main` para o lugar certo e limpe os temporários.
+    - Windows (PowerShell):
+      ```powershell
+      $zip = "$env:TEMP\slides-squad.zip"; $tmp = "$env:TEMP\slides-squad-zip"
+      Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
+      Invoke-WebRequest https://github.com/Vkretzkei/slides-squad/archive/refs/heads/main.zip -OutFile $zip -UseBasicParsing
+      Expand-Archive $zip $tmp -Force
+      Move-Item "$tmp\slides-squad-main" "$env:USERPROFILE\.claude\skills\slides-squad"
+      Remove-Item $zip, $tmp -Recurse -Force
+      ```
+    - Mac/Linux:
+      ```bash
+      rm -rf /tmp/slides-squad-zip
+      curl -L https://github.com/Vkretzkei/slides-squad/archive/refs/heads/main.zip -o /tmp/slides-squad.zip
+      unzip -q /tmp/slides-squad.zip -d /tmp/slides-squad-zip
+      mv /tmp/slides-squad-zip/slides-squad-main ~/.claude/skills/slides-squad
+      rm -rf /tmp/slides-squad.zip /tmp/slides-squad-zip
+      ```
 
 ### 3. Conferir a estrutura
 
@@ -52,13 +67,14 @@ Os scripts do squad (logos, fonte, paleta, revisão por screenshot) usam Python 
 ### 6. Validar
 
 - Liste `<home>/.claude/skills/slides-squad` e `<home>/.claude/commands/slides-*.md`.
-- Confirme que `SKILL.md` começa com `name: slides-squad`.
+- Confirme que o cabeçalho (frontmatter, entre as linhas `---`) do `SKILL.md` contém `name: slides-squad`.
+- Confirme que não existe outra pasta dentro de `skills` com um `SKILL.md` de `name: slides-squad` (backup antigo, cópia duplicada).
 
 ### 7. Dizer à pessoa o que fazer agora
 
 Mensagem curta, sem jargão:
 
-1. Instalado em `<caminho completo>` e vale para qualquer projeto.
+1. Instalado em `<caminho completo, já expandido, ex.: C:\Users\Ana\.claude\skills\slides-squad>` e vale para qualquer projeto.
 2. **Abra uma conversa nova** (ou reinicie o Claude) para os comandos aparecerem.
 3. Digite `/slides` e escolha:
    - `/slides-squad` — começar um projeto completo (recomendado)

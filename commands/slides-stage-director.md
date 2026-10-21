@@ -1,5 +1,5 @@
 ---
-description: Stage Director — chefe do squad: do briefing à entrega dos slides para o telão
+description: "Stage Director — chefe do squad, do briefing à entrega dos slides para o telão"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

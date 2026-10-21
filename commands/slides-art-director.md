@@ -1,5 +1,5 @@
 ---
-description: Art Director — composição, padrões de slide e motivo visual
+description: "Art Director — composição, padrões de slide e motivo visual"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

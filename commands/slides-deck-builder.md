@@ -1,5 +1,5 @@
 ---
-description: Deck Builder — constrói os decks HTML no motor do squad
+description: "Deck Builder — constrói os decks HTML no motor do squad"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

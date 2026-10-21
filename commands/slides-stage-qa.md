@@ -1,5 +1,5 @@
 ---
-description: Stage QA — revisão visual com screenshot e ensaio técnico
+description: "Stage QA — revisão visual com screenshot e ensaio técnico"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

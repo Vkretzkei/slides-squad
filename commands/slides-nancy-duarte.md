@@ -1,5 +1,5 @@
 ---
-description: Nancy Duarte — narrativa, arco e momento-chave da apresentação
+description: "Nancy Duarte — narrativa, arco e momento-chave da apresentação"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

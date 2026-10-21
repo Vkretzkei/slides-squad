@@ -1,5 +1,5 @@
 ---
-description: Garr Reynolds — simplicidade, cortes e teste de 3 segundos
+description: "Garr Reynolds — simplicidade, cortes e teste de 3 segundos"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

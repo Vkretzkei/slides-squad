@@ -67,10 +67,7 @@ Abra `templates/patterns/gallery.html` para ver todos os padrões funcionando.
 ### Jeito fácil: cole este prompt no Claude Code
 
 ```
-Instale o Slides Squad no meu computador para eu usar em qualquer chat ou projeto
-do Claude Code, não só numa pasta específica. Siga as instruções do arquivo
-INSTALAR.md deste repositório: https://github.com/Vkretzkei/slides-squad
-Quando eu digitar / quero ver o squad e os agentes para escolher.
+Instale o Slides Squad no meu computador para eu usar em qualquer chat ou projeto do Claude Code, não só numa pasta específica. Siga as instruções do arquivo INSTALAR.md deste repositório: https://github.com/Vkretzkei/slides-squad — Quando eu digitar / quero ver o squad e os agentes para escolher.
 ```
 
 O Claude baixa o squad para `~/.claude/skills/slides-squad`, instala os atalhos dos agentes em `~/.claude/commands/` e confere tudo. Depois é só abrir uma conversa nova e digitar `/slides`:

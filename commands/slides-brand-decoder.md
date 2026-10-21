@@ -1,5 +1,5 @@
 ---
-description: Brand Decoder — extrai identidade visual de artes, logos e landing page
+description: "Brand Decoder — extrai identidade visual de artes, logos e landing page"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

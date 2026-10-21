@@ -1,5 +1,5 @@
 ---
-description: Motion Designer — animações, builds por clique, transições e loops
+description: "Motion Designer — animações, builds por clique, transições e loops"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).

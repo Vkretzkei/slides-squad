@@ -1,5 +1,5 @@
 ---
-description: LED Engineer — telão, proporção, legibilidade e operação ao vivo
+description: "LED Engineer — telão, proporção, legibilidade e operação ao vivo"
 ---
 
 Ative o **Slides Squad** instalado em `~/.claude/skills/slides-squad/` (no Windows, `%USERPROFILE%\.claude\skills\slides-squad\`).
